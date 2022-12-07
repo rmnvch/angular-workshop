@@ -1,0 +1,79 @@
+.table {
+  margin: 0 auto;
+  width: 100%;
+  border-collapse: collapse;
+
+  th {
+    text-align: left;
+    padding: 10px;
+    color: #B0B0B0;
+    font-weight: 300;
+  }
+
+  tbody {
+    background-color: #fff;
+  }
+
+  td {
+    text-align: left;
+    min-height: 60px;
+    padding: 10px;
+  }
+
+  tbody tr {
+    border-bottom: 2px solid #F5F5F5;
+  }
+
+}
+
+.date {
+  span:first-child {
+    margin-right: 5px;
+  }
+
+  span:last-child{
+    color: #B0B0B0;
+  }
+}
+
+.id {
+  color: #B0B0B0;
+}
+
+.actions {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+
+  button {
+    padding: 5px;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: inherit;
+    border: none;
+    font-weight: inherit;
+
+    span {
+      display: inline-block;
+      height: 15px;
+      width: 15px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
+}
+
+.edit {
+
+  span {
+    background-image: url(../../../assets/edit.svg);
+  }
+}
+
+.delete {
+
+  span {
+    background-image: url(../../../assets/delete.svg);
+  }
+}

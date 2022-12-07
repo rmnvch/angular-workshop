@@ -1,0 +1,47 @@
+.wrapper {
+  margin: 0 auto;
+  max-width: 580px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #B0B0B0;
+  border-radius: 5px;
+  padding: 12px;
+
+  .input-box {
+    gap: 5px;
+    align-items: center;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .search-icon {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background: url(../../../assets/search.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+  }
+
+  .clear-icon {
+    cursor: pointer;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background: url(../../../assets/clear.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+  }
+
+  input {
+    background-color: inherit;
+    width: 100%;
+    border: none;    
+    outline: none;
+  }
+}

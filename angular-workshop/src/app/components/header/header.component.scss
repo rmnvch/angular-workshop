@@ -1,0 +1,25 @@
+.header {
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+  z-index: 10;
+  position: relative;
+
+  img {
+    max-width: 45px;
+    transform: translateY(3px);
+  }
+
+}
+
+.logo {
+  height: 50px;
+  width: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #9873FF;
+  border-radius: 50%;
+}

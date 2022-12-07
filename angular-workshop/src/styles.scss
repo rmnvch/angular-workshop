@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&family=Roboto:wght@300;500;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #333333;
+  font-weight: 300;
+}
+
+.container {
+  padding: 0 20px;
+  text-align: center;
+}
