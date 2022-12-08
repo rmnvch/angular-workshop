@@ -1,0 +1,22 @@
+<form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+  <label for="lastname">Lastname: </label>
+  <input id="lastname" type="text" formControlName="lastname">
+  <label for="name">Name: </label>
+  <input id="name" type="text" formControlName="name">
+  <label for="middlename">Middlename: </label>
+  <input id="middlename" type="text" formControlName="middlename">
+  <button [disabled]="!clientForm.touched" type="submit">Create</button>
+
+  <div formArrayName="contacts">
+    <div *ngFor="let contact of contacts.controls; let i = index">
+      <div [formGroupName]="i">
+        <select id="contact-{{ i }}" formControlName="type">
+          <option *ngFor="let option of contactOptions" [value]="option">{{option}}</option>
+        </select>
+        <input id="value-{{ i }}" type="text" formControlName="value">
+      </div>
+    </div>
+
+    <button type="button" (click)="addContact()">+ Add another contact</button>
+  </div>
+</form>
