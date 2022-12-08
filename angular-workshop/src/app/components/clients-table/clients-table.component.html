@@ -37,7 +37,10 @@
     </tr>
   </tbody>
 </table>
-<button class="add">
+<button (click)="DialogService.toggleDialog()" class="add">
   <span></span>
   Add new client
 </button>
+<app-dialog *ngIf="DialogService.isDialogOpen">
+  <app-client-dialog></app-client-dialog>
+</app-dialog>
