@@ -1,0 +1,6 @@
+<div class="wrapper">
+  <div class="contact" *ngFor="let contact of contactList">
+    <span class="contact-icon"></span>
+    <span class="contact-tooltip">{{contact['phone'] || contact['email']}}</span>
+  </div>
+</div>

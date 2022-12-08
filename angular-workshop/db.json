@@ -1,0 +1,16 @@
+{
+  "clients": [
+    {
+      "id": 1,
+      "name": "Anton",
+      "surname": "Ramanovich",
+      "middlename": "",
+      "createdAt": 1670488634325,
+      "modifiedAt": 1670488634325,
+      "contacts": [
+        {"phone": "+375296862777"}, 
+        {"email": "anton@gmail.com"} 
+      ]
+    }
+  ] 
+}
