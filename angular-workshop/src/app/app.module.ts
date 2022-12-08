@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { NavComponent } from './components/nav/nav.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { ClientsTableComponent } from './components/clients-table/clients-table.component';
+import { ContactBlockComponent } from './components/contact-block/contact-block.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +24,13 @@ import { ClientsTableComponent } from './components/clients-table/clients-table.
     NotFoundComponent,
     NavComponent,
     SearchBarComponent,
-    ClientsTableComponent
+    ClientsTableComponent,
+    ContactBlockComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
