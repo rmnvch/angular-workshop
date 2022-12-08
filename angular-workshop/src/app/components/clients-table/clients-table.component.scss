@@ -67,13 +67,39 @@
 .edit {
 
   span {
-    background-image: url(../../../assets/edit.svg);
+    background-image: url(/assets/edit.svg);
   }
 }
 
 .delete {
 
   span {
-    background-image: url(../../../assets/delete.svg);
+    background-image: url(/assets/delete.svg);
+  }
+}
+
+.add {
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  display: inline-flex;
+  align-items: center;
+  color: #9873FF;
+  border: 1px solid #9873FF;
+  padding: 12px 26px;
+  gap: 10px;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  span {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url(/assets/add.svg);
   }
 }
