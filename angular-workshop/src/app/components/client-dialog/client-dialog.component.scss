@@ -1,0 +1,33 @@
+.wrapper {
+  padding-bottom: 15px;
+}
+
+.header {
+  padding-left: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.close-btn {
+  cursor: pointer;
+  background-color: inherit;
+  border: none;
+  span {
+    display: inline-block;
+    height: 35px;
+    width: 35px;
+    background-image: url(/assets/clear.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.cancel-btn {
+  color: #333;
+  font-size: 0.8rem;
+  cursor: pointer;
+  background-color: inherit;
+  border: 0;
+  border-bottom: 1px solid #333;
+  padding: 2px;
+}

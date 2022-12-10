@@ -1,0 +1,118 @@
+:host {
+  padding-bottom: 15px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 20px;
+
+  .input-box {
+    gap: 5px;
+    position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    flex-direction: column-reverse;
+
+    label {
+      position: absolute;
+      bottom: 0;
+      color: #B0B0B0;
+
+    }
+
+    input {
+      outline: none;
+      border: none;
+      border-bottom: 1px solid #B0B0B0;
+
+      &:active,
+      &:focus {
+        border-bottom-color: #9873FF;
+      }
+    }
+
+    input:focus + label,
+    input:valid + label {
+      bottom: 100%;
+      font-size: 0.8rem;
+    }
+  }
+
+  .error-box .alert-danger{
+    color: #F06A4D;
+  }
+  
+}
+
+label {
+  text-align: left;
+  
+  span {
+    color: #9873FF;
+  }
+}
+
+.contacts-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+  background-color: rgb(240, 240, 240);
+  justify-content: space-around;
+}
+
+.contact-box {
+  display: flex;
+
+  select {
+    outline: none;
+    padding: 10px;
+    flex: 1;
+    background-color: #E7E5EB;
+    border: 1px solid #B0B0B0;
+  }
+
+  input {
+    outline: none;
+    padding: 10px;
+    flex: 2;
+    background-color: inherit;
+    border: 1px solid #B0B0B0;
+    outline: none;
+
+    &:focus {
+      border-color: #9873FF;
+    }
+  }
+}
+
+.add-btn {
+  cursor: pointer;
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  border: none;
+  justify-content: center;
+  gap: 5px;
+
+  span {
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(/assets/addPlus.svg);
+  }
+}
+
+.create-btn {
+  margin-bottom: 10px;
+  padding: 12px 35px;
+  align-self: center;
+  background-color: #9873FF;
+  color: #fff;
+  border: none;
+}

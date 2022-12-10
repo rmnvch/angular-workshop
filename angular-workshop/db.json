@@ -1,16 +1,40 @@
 {
   "clients": [
     {
-      "id": 1,
-      "name": "Anton",
-      "surname": "Ramanovich",
+      "lastname": "Loureiro",
+      "name": "Kiko",
       "middlename": "",
-      "createdAt": 1670488634325,
-      "modifiedAt": 1670488634325,
-      "contacts": [
-        {"phone": "+375296862777"}, 
-        {"email": "anton@gmail.com"} 
-      ]
+      "contacts": [],
+      "createdAt": 1670681857374,
+      "modifiedAt": 1670681857374,
+      "id": 9
+    },
+    {
+      "lastname": "Mustaine",
+      "name": "Dave",
+      "middlename": "Ginger Beast",
+      "contacts": [],
+      "createdAt": 1670681885489,
+      "modifiedAt": 1670681885489,
+      "id": 10
+    },
+    {
+      "lastname": "sd",
+      "name": "sd",
+      "middlename": "",
+      "contacts": [],
+      "createdAt": 1670705468109,
+      "modifiedAt": 1670705468109,
+      "id": 11
+    },
+    {
+      "lastname": "asd",
+      "name": "sd",
+      "middlename": "",
+      "contacts": [],
+      "createdAt": 1670705482826,
+      "modifiedAt": 1670705482826,
+      "id": 12
     }
-  ] 
+  ]
 }

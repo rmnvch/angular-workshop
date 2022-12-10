@@ -1,46 +1,50 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Fullname</th>
-      <th>Adding date</th>
-      <th>Last changes date</th>
-      <th>Contacts</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let client of clients">
-      <td class="id">{{client.id}}</td>
-      <td>{{client.surname + " " + client.middlename + " " + client.name}}</td>
-      <td class="date">
-        <span>{{client.createdAt | date: 'shortDate' }}</span>
-        <span>{{client.createdAt | date: 'shortTime' }}</span>
-      </td>
-      <td class="date">
-        <span>{{client.modifiedAt | date: 'shortDate' }}</span>
-        <span>{{client.modifiedAt | date: 'shortTime' }}</span>
-      </td>
-      <td class="contacts">
-        <app-contact-block [contactList]="client.contacts"></app-contact-block>
-      </td>
-      <td class="actions">
-        <button class="edit">
-          <span></span>
-          Edit
-        </button>
-        <button class="delete">
-          <span></span>
-          Delete
-        </button>
-      </td>
-    </tr>
-  </tbody>
-</table>
-<button (click)="DialogService.toggleDialog()" class="add">
-  <span></span>
-  Add new client
-</button>
-<app-dialog *ngIf="DialogService.isDialogOpen">
-  <app-client-dialog></app-client-dialog>
-</app-dialog>
+<div class="test">
+  <div class="wrapper">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Fullname</th>
+          <th>Adding date</th>
+          <th>Last changes date</th>
+          <th>Contacts</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let client of clients | async">
+          <td class="id">{{client.id}}</td>
+          <td>{{client.lastname + " " + client.name + " " + client.middlename}}</td>
+          <td class="date">
+            <span>{{client.createdAt | date: 'shortDate' }}</span>
+            <span>{{client.createdAt | date: 'shortTime' }}</span>
+          </td>
+          <td class="date">
+            <span>{{client.modifiedAt | date: 'shortDate' }}</span>
+            <span>{{client.modifiedAt | date: 'shortTime' }}</span>
+          </td>
+          <td class="contacts">
+            <app-contact-block [contactList]="client.contacts"></app-contact-block>
+          </td>
+          <td class="actions">
+            <button class="edit">
+              <span></span>
+              Edit
+            </button>
+            <button (click)="onDelete(client.id)" class="delete">
+              <span></span>
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <button (click)="DialogService.toggleDialog()" class="add">
+    <span></span>
+    Add new client
+  </button>
+  <app-dialog *ngIf="DialogService.isDialogOpen">
+    <app-client-dialog (badPractiseEvent)="onAddingClient($event)"></app-client-dialog>
+  </app-dialog>
+</div>

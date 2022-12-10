@@ -1,12 +1,12 @@
 <div class="wrapper">
   <div class="header">
-    <h2 class="title"></h2>
-    <button class="close-btn">
+    <h2 class="title">New client</h2>
+    <button (click)="DialogService.toggleDialog()" class="close-btn">
       <span></span>
     </button>
   </div>
-  <app-client-form></app-client-form>
-  <button class="cancel-btn">
+  <app-client-form (clientAdded)="onAddingClient($event)"></app-client-form>
+  <button (click)="DialogService.toggleDialog()" class="cancel-btn">
     Cancel
   </button>
 </div>

@@ -17,6 +17,7 @@ import { ContactBlockComponent } from './components/contact-block/contact-block.
 import { DialogComponent } from './components/dialog/dialog.component';
 import { ClientDialogComponent } from './components/client-dialog/client-dialog.component';
 import { ClientFormComponent } from './components/client-form/client-form.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ClientFormComponent } from './components/client-form/client-form.compon
     DialogComponent,
     ClientDialogComponent,
     ClientFormComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

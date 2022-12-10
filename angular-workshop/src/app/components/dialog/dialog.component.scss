@@ -12,13 +12,13 @@
 
 } 
 
-.container {
-  bottom: calc(50vh - 250px);
+.container-dialog {
+  bottom: calc(50vh - 150px);
   right: calc(50vw - 225px);
   background-color: #fff;
   border-radius: 5px;
   width: 450px;
-  height: 500px;
+  min-height: 300px;
   position: absolute;
   z-index: 11;
 }
