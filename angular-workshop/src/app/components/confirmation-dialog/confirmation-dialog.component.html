@@ -1,0 +1,13 @@
+<div class="wrapper">
+  <div class="header">
+    <h2 class="title">{{ title }}</h2>
+    <button (click)="DialogService.toggleDialog()" class="close-btn">
+      <span></span>
+    </button>
+  </div>
+  <p class="descr">Are you sure you want to delete Client with id: {{DialogService.id}} ?</p>
+  <div class="actions">
+    <button (click)="onDelete()" class="delete-btn">Delete</button>
+    <button (click)="DialogService.toggleDialog()" class="cancel-btn">Cancel</button>
+  </div>
+</div>
