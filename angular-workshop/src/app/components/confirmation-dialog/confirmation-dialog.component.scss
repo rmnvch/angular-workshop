@@ -1,0 +1,64 @@
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // gap: 30px;
+}
+
+.header {
+  align-self: stretch;
+  position: relative;
+
+  h2 {
+    text-align: center;
+  }
+}
+
+p {
+  margin: 15px auto 0 auto;
+  max-width: 60%;
+}
+
+.actions {
+  margin-top: 45px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 0;
+  cursor: pointer;
+  background-color: inherit;
+  border: none;
+  span {
+    display: inline-block;
+    height: 35px;
+    width: 35px;
+    background-image: url(/assets/clear.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.delete-btn {
+  cursor: pointer;
+  margin-bottom: 10px;
+  padding: 12px 35px;
+  align-self: center;
+  background-color: #9873FF;
+  color: #fff;
+  border: none;
+}
+
+.cancel-btn {
+  cursor: pointer;
+  font-size: 0.9rem;
+  border: none;
+  background-color: inherit;
+  color: #333;
+  text-decoration: underline;
+}

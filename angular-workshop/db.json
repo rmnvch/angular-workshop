@@ -1,40 +1,128 @@
 {
   "clients": [
     {
-      "lastname": "Loureiro",
-      "name": "Kiko",
-      "middlename": "",
-      "contacts": [],
-      "createdAt": 1670681857374,
-      "modifiedAt": 1670681857374,
-      "id": 9
-    },
-    {
-      "lastname": "Mustaine",
+      "lastname": "Mustaine ",
       "name": "Dave",
-      "middlename": "Ginger Beast",
-      "contacts": [],
-      "createdAt": 1670681885489,
-      "modifiedAt": 1670681885489,
-      "id": 10
-    },
-    {
-      "lastname": "sd",
-      "name": "sd",
       "middlename": "",
-      "contacts": [],
-      "createdAt": 1670705468109,
-      "modifiedAt": 1670705468109,
+      "contacts": [
+        {
+          "type": "telegram",
+          "value": "@_oaoi_ao"
+        },
+        {
+          "type": "phone",
+          "value": "+375446667788"
+        }
+      ],
+      "createdAt": 1670751479444,
+      "modifiedAt": 1670869284672,
       "id": 11
     },
     {
-      "lastname": "asd",
-      "name": "sd",
+      "lastname": "Broderick",
+      "name": "Chris",
       "middlename": "",
       "contacts": [],
-      "createdAt": 1670705482826,
-      "modifiedAt": 1670705482826,
+      "createdAt": 1670751559743,
+      "modifiedAt": 1670751559743,
       "id": 12
+    },
+    {
+      "lastname": "Ulrich",
+      "name": "Lars",
+      "middlename": "",
+      "contacts": [
+        {
+          "type": "telegram",
+          "value": "@metallica_drums"
+        }
+      ],
+      "createdAt": 1670859088048,
+      "modifiedAt": 1670859088048,
+      "id": 13
+    },
+    {
+      "lastname": "Armstrong",
+      "name": "Billie",
+      "middlename": "Joe",
+      "contacts": [
+        {
+          "type": "email",
+          "value": "dookie@gmail.com"
+        }
+      ],
+      "createdAt": 1670859390428,
+      "modifiedAt": 1670859390428,
+      "id": 14
+    },
+    {
+      "lastname": "Cool",
+      "name": "Tre",
+      "middlename": "",
+      "contacts": [],
+      "createdAt": 1670859425070,
+      "modifiedAt": 1670859425070,
+      "id": 15
+    },
+    {
+      "lastname": "Dirnt",
+      "name": "Mike",
+      "middlename": "",
+      "contacts": [
+        {
+          "type": "telegram",
+          "value": "@dookie"
+        }
+      ],
+      "createdAt": 1670859433796,
+      "modifiedAt": 1670869395237,
+      "id": 16
+    },
+    {
+      "lastname": "DeLonge",
+      "name": "Tom",
+      "middlename": "",
+      "contacts": [
+        {
+          "type": "telegram",
+          "value": "@carousel"
+        }
+      ],
+      "createdAt": 1670859503879,
+      "modifiedAt": 1670859503879,
+      "id": 17
+    },
+    {
+      "lastname": "Loureiro",
+      "name": "Kiko",
+      "middlename": "",
+      "contacts": [
+        {
+          "type": "phone",
+          "value": "+375296862777"
+        }
+      ],
+      "createdAt": 1670869136844,
+      "modifiedAt": 1670869136844,
+      "id": 18
+    },
+    {
+      "lastname": "Loureiro",
+      "name": "Kiko",
+      "middlename": "",
+      "contacts": [
+        {
+          "type": "telegram",
+          "value": "@_oaoi_ao"
+        },
+        {
+          "type": "email",
+          "value": "af@gmail.com"
+        }
+      ],
+      "createdAt": 1670869347442,
+      "modifiedAt": 1670869367381,
+      "id": 19
     }
   ]
 }

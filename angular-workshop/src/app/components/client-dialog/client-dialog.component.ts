@@ -8,11 +8,8 @@ import { IClient } from 'src/app/types/interfaces';
   styleUrls: ['./client-dialog.component.scss']
 })
 export class ClientDialogComponent {
-  constructor(public DialogService: DialogService) {}
-
-  @Output() badPractiseEvent = new EventEmitter<IClient>();
-
-  onAddingClient(event: IClient) {
-    this.badPractiseEvent.emit(event);
+  title: string
+  constructor(public DialogService: DialogService) {
+    this.title = this.DialogService.id ? 'Edit Client' : 'New Client'
   }
 }

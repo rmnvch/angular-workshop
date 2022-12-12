@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormArray, FormBuilder, FormControl } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { ClientService } from 'src/app/services/client-service.service';
@@ -10,10 +10,10 @@ import { IClient, IFormData } from 'src/app/types/interfaces';
   templateUrl: './client-form.component.html',
   styleUrls: ['./client-form.component.scss']
 })
-export class ClientFormComponent {
+export class ClientFormComponent implements OnInit {
   contactOptions: Array<string> = ['phone', 'email', 'viber', 'telegram']
   defaultValue = 'phone'
-  @Output() clientAdded = new EventEmitter<IClient>();
+  submitBtn: string
   clientForm = this.formBuilder.group({
     lastname: ['',[Validators.required, Validators.minLength(2)]],
     name: ['',[Validators.required, Validators.minLength(2)]],
@@ -21,14 +21,32 @@ export class ClientFormComponent {
     contacts: this.formBuilder.array([])
   })
 
-  constructor(private formBuilder: FormBuilder, public ClientService: ClientService, private DialogService: DialogService ) {}
+  constructor(private formBuilder: FormBuilder, public ClientService: ClientService, private DialogService: DialogService ) {
+    this.submitBtn = this.DialogService.id ? 'Update' : 'Create';
+  }
 
   onSubmit() {
-    this.ClientService.addClient(this.clientForm.value as IFormData).subscribe((data) => {
-      this.clientAdded.emit(data);
-      this.DialogService.toggleDialog();
-    })
+    if (this.DialogService.id) {
+      this.ClientService.updateClient(this.clientForm.value as IFormData, this.DialogService.id)
+    } else {
+      this.ClientService.addClient(this.clientForm.value as IFormData)
+    }
   }
+
+  ngOnInit(): void {
+    if (this.DialogService.id) {
+      this.ClientService.getClientById(this.DialogService.id)
+        .subscribe((data) => {
+          this.clientForm.controls.lastname.setValue(data.lastname);
+          this.clientForm.controls.name.setValue(data.name);
+          this.clientForm.controls.middlename.setValue(data.middlename || '');
+          data.contacts.forEach((contact) => {
+            this.addContact(contact)
+          })
+        })
+    }
+  }
+  
 
   get lastname() { return this.clientForm.get('lastname'); }
   get name() { return this.clientForm.get('name'); }
@@ -39,13 +57,13 @@ export class ClientFormComponent {
   }
 
 
-  addContact() {
+  addContact(contact?: {type: string, value: string}) {
     if (this.contacts.length === 5) {
       return;
     }
     const contactForm = this.formBuilder.group({
-      type: [this.defaultValue, Validators.required],
-      value: ['', Validators.required],
+      type: [contact?.type ||this.defaultValue, Validators.required],
+      value: [contact?.value || '', Validators.required],
     });
     this.contacts.push(contactForm);
   }

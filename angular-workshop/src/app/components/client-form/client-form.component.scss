@@ -20,6 +20,7 @@ form {
       position: absolute;
       bottom: 0;
       color: #B0B0B0;
+      transition: all 0.15s ease-out;
 
     }
 
@@ -109,10 +110,25 @@ label {
 }
 
 .create-btn {
+  cursor: pointer;
   margin-bottom: 10px;
   padding: 12px 35px;
   align-self: center;
   background-color: #9873FF;
   color: #fff;
   border: none;
+
+  &:disabled {
+    background-color: #9873ff5e;
+    color: #B0B0B0;
+    pointer-events: none;
+  }
+
+  &:hover {
+    background-color: #9873ffbf;
+  }
+
+  &:active {
+    background-color: #9873ffbf;
+  }
 }
