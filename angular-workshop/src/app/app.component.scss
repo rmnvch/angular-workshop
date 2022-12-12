@@ -1,4 +1,6 @@
-// :host {
-//   max-height: 100vh;
-//   overflow: hidden;
-// }
+:host {
+  max-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}

@@ -5,12 +5,14 @@ export interface IClient {
   middlename?: string;
   createdAt: number;
   modifiedAt: number;
-  contacts: Array<{[K: string]: string}>
+  contacts: Array<{type: string; value: string}>
 }
 
 export interface IFormData {
   name: string;
   lastname: string;
   middlename?: string;
-  contacts: Array<{[K: string]: string}>
+  contacts: Array<{type: string; value: string}>
 }
+
+export type ModalTypes = 'new' | 'edit' | 'delete';

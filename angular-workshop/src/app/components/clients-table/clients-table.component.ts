@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { ClientService } from 'src/app/services/client-service.service';
 import { DialogService } from 'src/app/services/dialog.service';
-import { IClient } from 'src/app/types/interfaces';
+import { IClient, ModalTypes } from 'src/app/types/interfaces';
 
 @Component({
   selector: 'app-clients-table',
@@ -10,30 +9,12 @@ import { IClient } from 'src/app/types/interfaces';
   styleUrls: ['./clients-table.component.scss']
 })
 export class ClientsTableComponent implements OnInit{
-  // clients: IClient[] = []
-  clients: Observable<IClient[]>
-  constructor(private ClientService: ClientService, public DialogService: DialogService) {}
+  clients: IClient[] = []
+  constructor(private ClientService: ClientService, public DialogService: DialogService) {
+    ClientService.clientsList.subscribe((data) => this.clients = data);
+  }
 
   ngOnInit(): void {
-    this.getTheUpdates()
-    // this.ClientService.getClients()
-    //   .subscribe((data: IClient[]) => this.clients = data)
-  }
-
-
-  getTheUpdates() {
-    this.clients = this.ClientService.getClients();
-  }
-
-  onAddingClient(client: IClient) {
-    console.log(client);
-    this.getTheUpdates();
-    // this.clients.push(client as IClient);
-  }
-
-  onDelete(id: number) {
-    this.ClientService.deleteClient(id).subscribe(() => this.getTheUpdates());
-    console.log(id)
-      // .subscribe(() => this.clients = this.clients.filter((client) => client.id !== id))
+    this.ClientService.getClients();
   }
 }

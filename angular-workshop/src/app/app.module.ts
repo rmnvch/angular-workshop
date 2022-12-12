@@ -18,6 +18,7 @@ import { DialogComponent } from './components/dialog/dialog.component';
 import { ClientDialogComponent } from './components/client-dialog/client-dialog.component';
 import { ClientFormComponent } from './components/client-form/client-form.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { FooterComponent } from './components/footer/footer.component';
     ClientDialogComponent,
     ClientFormComponent,
     FooterComponent,
+    ConfirmationDialogComponent,
   ],
   imports: [
     BrowserModule,

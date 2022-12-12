@@ -1,8 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
+import { Observable, ReplaySubject, Subject, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { IClient, IFormData } from '../types/interfaces';
+import { DialogService } from './dialog.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,15 +11,19 @@ import { IClient, IFormData } from '../types/interfaces';
 export class ClientService {
   baseURL = "http://localhost:3000/clients"
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private DialogService: DialogService) { }
 
-  public addedUser = new Observable();
+  public clientsList = new Subject<IClient[]>(); 
 
-  getClients (): Observable<IClient[]> {
-    return this.http.get<IClient[]>(this.baseURL);
+  getClients (): void {
+    this.http.get<IClient[]>(this.baseURL).subscribe((data) => this.clientsList.next(data));
   }
 
-  addClient(data: IFormData): Observable<IClient> {
+  getClientById (id: number): Observable<IClient> {
+    return this.http.get<IClient>(`${this.baseURL}/${id}`)
+  }
+
+  addClient(data: IFormData): void {
     const newBody = {
       ...data,
       createdAt: Date.now(),
@@ -30,10 +35,34 @@ export class ClientService {
         'Content-Type':  'application/json',
       }),
     }
-    return this.http.post<IClient>(this.baseURL, newBody, httpOptions);
+    this.http.post<IClient>(this.baseURL, newBody, httpOptions).subscribe(() => {
+      this.getClients()
+      this.DialogService.toggleDialog();
+    });
+  }
+
+  updateClient(data: IFormData, id: number): void {
+    const newBody = {
+      ...data,
+      modifiedAt: Date.now(),
+    }
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+      }),
+    }
+    this.http.patch<IClient>(`${this.baseURL}/${id}`, newBody, httpOptions).subscribe(() => {
+      console.log(data)
+      this.getClients()
+      this.DialogService.toggleDialog();
+    });
   }
 
   deleteClient(id: number) {
-    return this.http.delete<IClient>(`${this.baseURL}/${id}`);
+    this.http.delete<IClient>(`${this.baseURL}/${id}`).subscribe(() => {
+      this.getClients()
+      this.DialogService.toggleDialog();
+    });
   }
 }
